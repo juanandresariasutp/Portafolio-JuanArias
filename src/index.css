@@ -267,3 +267,7 @@ button, input, textarea, select {
 .glow-element {
   animation: pulseGlow 3s infinite ease-in-out;
 }
+
+.app-container {
+  padding-top: 80px;
+}

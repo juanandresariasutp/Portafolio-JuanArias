@@ -1,18 +1,19 @@
 import { ThemeProvider } from './context/ThemeContext'
+import Header from './components/Header'
 
 function App() {
   return (
     <ThemeProvider>
       <div className="app-container">
-        {/* El Header con navegación se ubicará aquí */}
-        <header id="home">
-          <div className="container">
-            <h1>Portafolio - Desarrollador Fullstack & Ingeniero de Sistemas</h1>
-          </div>
-        </header>
+        {/* Renderizado de la Barra de Navegación Global */}
+        <Header />
 
         <main>
           {/* Secciones principales de la SPA */}
+          <section id="home">
+            {/* Espacio para la landing o parte superior si es necesario */}
+          </section>
+
           <section id="hero">
             <div className="container">
               {/* Aquí se cargará el componente Hero */}
