@@ -1,5 +1,6 @@
 import { ThemeProvider } from './context/ThemeContext'
 import Header from './components/Header'
+import Hero from './components/Hero'
 
 function App() {
   return (
@@ -9,16 +10,8 @@ function App() {
         <Header />
 
         <main>
-          {/* Secciones principales de la SPA */}
-          <section id="home">
-            {/* Espacio para la landing o parte superior si es necesario */}
-          </section>
-
-          <section id="hero">
-            <div className="container">
-              {/* Aquí se cargará el componente Hero */}
-            </div>
-          </section>
+          {/* Sección Hero de Bienvenida (ocupa el id="home") */}
+          <Hero />
 
           <section id="about">
             <div className="container">

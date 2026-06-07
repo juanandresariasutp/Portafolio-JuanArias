@@ -1,0 +1,155 @@
+.hero-section {
+  position: relative;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 3rem 0;
+}
+
+.hero-container-layout {
+  position: relative;
+  z-index: 2;
+}
+
+/* Esferas de brillo animadas en el fondo */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.glow-sphere {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.18;
+  transition: var(--transition-smooth);
+}
+
+.sphere-1 {
+  width: 350px;
+  height: 350px;
+  background: var(--accent-primary);
+  top: 10%;
+  right: 10%;
+  animation: floatSphere1 12s infinite alternate ease-in-out;
+}
+
+.sphere-2 {
+  width: 250px;
+  height: 250px;
+  background: var(--accent-secondary);
+  bottom: 15%;
+  left: 5%;
+  animation: floatSphere2 10s infinite alternate ease-in-out;
+}
+
+[data-theme='light'] .glow-sphere {
+  opacity: 0.07;
+  filter: blur(100px);
+}
+
+@keyframes floatSphere1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(-30px, -30px) scale(1.1);
+  }
+}
+
+@keyframes floatSphere2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(30px, 20px) scale(1.15);
+  }
+}
+
+/* Contenido de textos */
+.hero-content {
+  max-width: 800px;
+  text-align: left;
+}
+
+.hero-subtitle {
+  font-family: var(--font-mono);
+  color: var(--accent-primary);
+  font-size: 1.05rem;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 1.25rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-size: clamp(2.8rem, 7vw, 4.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+  letter-spacing: -2px;
+}
+
+.hero-typing {
+  font-size: clamp(1.4rem, 3.5vw, 2.3rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.8rem;
+  min-height: 2.8rem; /* Reserva espacio para evitar que el texto empuje la descripción */
+  display: flex;
+  align-items: center;
+}
+
+.typed-text {
+  color: var(--accent-secondary);
+  margin-left: 0.5rem;
+  font-weight: 700;
+}
+
+.cursor {
+  color: var(--accent-primary);
+  animation: blinkCursor 0.8s infinite;
+  font-weight: 300;
+  margin-left: 3px;
+}
+
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.hero-description {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: var(--text-secondary);
+  max-width: 620px;
+  margin-bottom: 2.5rem;
+  line-height: 1.75;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+/* Ajustes Responsive */
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 5rem;
+    min-height: calc(100vh - 80px);
+  }
+  .hero-typing {
+    min-height: 4.5rem; /* Permite salto de línea en pantallas pequeñas sin desajustes */
+    flex-wrap: wrap;
+  }
+  .hero-actions {
+    justify-content: flex-start;
+  }
+}
