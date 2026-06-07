@@ -4,15 +4,10 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
 import Projects from './components/Projects'
+import ProjectModal from './components/ProjectModal'
 
 function App() {
   const [selectedProject, setSelectedProject] = useState(null);
-
-  // Imprimir en consola el proyecto seleccionado para validar la interactividad (previo al paso del modal)
-  const handleSelectProject = (project) => {
-    setSelectedProject(project);
-    console.log('Proyecto seleccionado:', project.title);
-  };
 
   return (
     <ThemeProvider>
@@ -28,7 +23,15 @@ function App() {
           <About />
 
           {/* Sección de Proyectos Fullstack */}
-          <Projects onSelectProject={handleSelectProject} />
+          <Projects onSelectProject={setSelectedProject} />
+
+          {/* Modal de Detalles del Proyecto Seleccionado */}
+          {selectedProject && (
+            <ProjectModal 
+              project={selectedProject} 
+              onClose={() => setSelectedProject(null)} 
+            />
+          )}
 
           <section id="experience">
             <div className="container">

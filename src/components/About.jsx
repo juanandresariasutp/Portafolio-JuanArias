@@ -50,7 +50,7 @@ export default function About() {
           <div className="about-info glass-card">
             <h3>¿Quién soy?</h3>
             <p>
-              Soy un apasionado <strong>Ingeniero de Sistemas y Desarrollador Fullstack</strong> enfocado en diseñar y construir soluciones tecnológicas robustas que resuelvan problemas reales con eficiencia. Mi formación abarca desde el modelado y la optimización de bases de datos, hasta la maquetación y la interactividad de interfaces modernas.
+              Soy un apasionado <strong>Ingeniero de Sistemas y Desarrollador Fullstack</strong> enfocado en diseñar y construir soluciones tecnológicas robustas que resuelvan problemas reales con eficiencia.
             </p>
             <p>
               Me considero un profesional orientado al detalle, que prioriza escribir código limpio, modular y mantenible. Me encanta aprender constantemente y afrontar nuevos retos tecnológicos para seguir creciendo dentro de la industria de software.
