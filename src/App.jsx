@@ -7,6 +7,7 @@ import Projects from './components/Projects'
 import ProjectModal from './components/ProjectModal'
 import Timeline from './components/Timeline'
 import Contact from './components/Contact'
+import ScrollReveal from './components/ScrollReveal'
 
 function App() {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -18,16 +19,20 @@ function App() {
         <Header />
 
         <main>
-          {/* Sección Hero de Bienvenida */}
+          {/* Sección Hero de Bienvenida (se muestra de entrada sin retraso) */}
           <Hero />
 
-          {/* Sección "Sobre Mí" y Habilidades Filtrables */}
-          <About />
+          {/* Sección "Sobre Mí" con animación al hacer scroll */}
+          <ScrollReveal>
+            <About />
+          </ScrollReveal>
 
-          {/* Sección de Proyectos Fullstack */}
-          <Projects onSelectProject={setSelectedProject} />
+          {/* Sección de Proyectos con animación al hacer scroll */}
+          <ScrollReveal>
+            <Projects onSelectProject={setSelectedProject} />
+          </ScrollReveal>
 
-          {/* Modal de Detalles del Proyecto Seleccionado */}
+          {/* Modal de Detalles del Proyecto Seleccionado (Portal) */}
           {selectedProject && (
             <ProjectModal 
               project={selectedProject} 
@@ -35,11 +40,15 @@ function App() {
             />
           )}
 
-          {/* Sección de Cronología Profesional */}
-          <Timeline />
+          {/* Sección de Cronología Profesional con animación al hacer scroll */}
+          <ScrollReveal>
+            <Timeline />
+          </ScrollReveal>
 
-          {/* Sección de Contacto */}
-          <Contact />
+          {/* Sección de Contacto con animación al hacer scroll */}
+          <ScrollReveal>
+            <Contact />
+          </ScrollReveal>
         </main>
 
         <footer>

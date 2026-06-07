@@ -271,3 +271,16 @@ button, input, textarea, select {
 .app-container {
   padding-top: 80px;
 }
+
+/* Animaciones al hacer scroll (Scroll Reveal) */
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.9s ease-out, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
