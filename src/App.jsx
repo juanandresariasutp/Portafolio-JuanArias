@@ -1,9 +1,19 @@
+import { useState } from 'react'
 import { ThemeProvider } from './context/ThemeContext'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
+import Projects from './components/Projects'
 
 function App() {
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  // Imprimir en consola el proyecto seleccionado para validar la interactividad (previo al paso del modal)
+  const handleSelectProject = (project) => {
+    setSelectedProject(project);
+    console.log('Proyecto seleccionado:', project.title);
+  };
+
   return (
     <ThemeProvider>
       <div className="app-container">
@@ -17,11 +27,8 @@ function App() {
           {/* Sección "Sobre Mí" y Habilidades Filtrables */}
           <About />
 
-          <section id="projects">
-            <div className="container">
-              {/* Aquí se cargará la sección de Proyectos */}
-            </div>
-          </section>
+          {/* Sección de Proyectos Fullstack */}
+          <Projects onSelectProject={handleSelectProject} />
 
           <section id="experience">
             <div className="container">
