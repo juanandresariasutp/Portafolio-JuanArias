@@ -6,6 +6,7 @@ import About from './components/About'
 import Projects from './components/Projects'
 import ProjectModal from './components/ProjectModal'
 import Timeline from './components/Timeline'
+import Contact from './components/Contact'
 
 function App() {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -37,11 +38,8 @@ function App() {
           {/* Sección de Cronología Profesional */}
           <Timeline />
 
-          <section id="contact">
-            <div className="container">
-              {/* Aquí se cargará el formulario de contacto */}
-            </div>
-          </section>
+          {/* Sección de Contacto */}
+          <Contact />
         </main>
 
         <footer>
