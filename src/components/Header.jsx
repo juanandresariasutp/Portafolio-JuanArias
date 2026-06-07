@@ -25,8 +25,8 @@ export default function Header() {
         </a>
 
         {/* Botón del menú móvil (Hamburguesa) */}
-        <button 
-          className={`menu-toggle ${isMenuOpen ? 'open' : ''}`} 
+        <button
+          className={`menu-toggle ${isMenuOpen ? 'open' : ''}`}
           onClick={toggleMenu}
           aria-label="Abrir menú de navegación"
           aria-expanded={isMenuOpen}
@@ -49,7 +49,7 @@ export default function Header() {
               <a href="#projects" className="nav-link" onClick={closeMenu}>Proyectos</a>
             </li>
             <li className="nav-item">
-              <a href="#experience" className="nav-link" onClick={closeMenu}>Experiencia</a>
+              <a href="#education" className="nav-link" onClick={closeMenu}>Educación</a>
             </li>
             <li className="nav-item">
               <a href="#contact" className="nav-link" onClick={closeMenu}>Contacto</a>
@@ -58,9 +58,9 @@ export default function Header() {
         </nav>
 
         {/* Botón de cambio de Modo Claro/Oscuro */}
-        <button 
-          className="theme-toggle-btn" 
-          onClick={toggleTheme} 
+        <button
+          className="theme-toggle-btn"
+          onClick={toggleTheme}
           aria-label="Cambiar tema de color"
         >
           {theme === 'dark' ? (

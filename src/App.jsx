@@ -5,6 +5,7 @@ import Hero from './components/Hero'
 import About from './components/About'
 import Projects from './components/Projects'
 import ProjectModal from './components/ProjectModal'
+import Timeline from './components/Timeline'
 
 function App() {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -33,11 +34,8 @@ function App() {
             />
           )}
 
-          <section id="experience">
-            <div className="container">
-              {/* Aquí se cargará la línea de tiempo */}
-            </div>
-          </section>
+          {/* Sección de Cronología Profesional */}
+          <Timeline />
 
           <section id="contact">
             <div className="container">

@@ -1,0 +1,151 @@
+.timeline-section {
+  padding: 6rem 0;
+  position: relative;
+}
+
+.timeline-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+}
+
+/* Línea vertical central */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 31px; /* Alineado al centro del dot (12px left + 20px radio) */
+  width: 2px;
+  height: 100%;
+  background: var(--border-color);
+  transition: var(--transition-smooth);
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 70px;
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Punto indicador (Timeline Dot) */
+.timeline-dot {
+  position: absolute;
+  left: 12px;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: var(--transition-bounce);
+}
+
+.timeline-item:hover .timeline-dot {
+  background: var(--accent-gradient);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 0 15px var(--glow-color);
+  transform: scale(1.15);
+}
+
+.timeline-dot svg {
+  flex-shrink: 0;
+}
+
+/* Tarjeta informativa */
+.timeline-card {
+  padding: 2rem;
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.timeline-card:hover {
+  transform: translateX(6px);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 25px var(--glass-shadow);
+}
+
+[data-theme='light'] .timeline-card:hover {
+  border-color: var(--accent-primary);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-period {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--accent-secondary);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+[data-theme='light'] .timeline-period {
+  color: var(--accent-primary);
+}
+
+.timeline-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+  font-family: var(--font-heading);
+}
+
+.timeline-subtitle {
+  font-size: 1rem;
+  font-weight: 550;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.timeline-description {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* Adaptabilidad a dispositivos móviles */
+@media (max-width: 576px) {
+  .timeline-container::before {
+    left: 21px;
+  }
+  
+  .timeline-item {
+    padding-left: 50px;
+    margin-bottom: 2.2rem;
+  }
+  
+  .timeline-dot {
+    left: 6px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .timeline-dot svg {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .timeline-card {
+    padding: 1.25rem;
+  }
+
+  .timeline-title {
+    font-size: 1.15rem;
+  }
+
+  .timeline-subtitle {
+    font-size: 0.9rem;
+  }
+}
